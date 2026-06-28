@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam's Restaurant | المنيو</title>
+<style>
+
+  :root {
+    --ink: #161312;
+    --bg: #fbf6ee;
+    --paper: #ffffff;
+    --flame: #ff4d12;
+    --mustard: #ffb800;
+    --line: #e7ded0;
+    --muted: #847b6c;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 48px 24px 40px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    background: var(--mustard);
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 14px;
+  }
+
+  .hero-title-accent {
+    color: var(--flame);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: #d8d2c6;
+    max-width: 340px;
+    margin: 0;
+  }
+
+  /* ---------- CATEGORY NAV ---------- */
+  .cat-nav {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto;
+  }
+
+  .cat-btn {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .cat-btn:hover {
+    border-color: var(--flame);
+  }
+
+  .cat-btn.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  /* ---------- MENU SECTIONS ---------- */
+  .menu-section {
+    padding: 10px 20px 40px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 30px 0 16px;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .menu-card {
+    position: relative;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .menu-tag {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: var(--flame);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  .menu-card-name {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0 0 6px;
+  }
+
+  .menu-card-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0 0 14px;
+    line-height: 1.5;
+    min-height: 38px;
+  }
+
+  .menu-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-card-price {
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  .add-btn {
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .add-btn:hover {
+    background: var(--flame);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <span class="hero-eyebrow">Adam's Restaurant ・ مفتوح دلوقتي</span>
+    <h1 class="hero-title">
+      جعان؟<br>
+      <span class="hero-title-accent">إحنا جاهزين.</span>
+    </h1>
+    <p class="hero-sub">بيتزا طرية، برجر طازة، وبطاطس مقرمشة بتوصلك في نص ساعة.</p>
+  </header>
+
+  <!-- ===== CATEGORY NAV (روابط بتنقلك لكل قسم في الصفحة) ===== -->
+  <nav class="cat-nav">
+    <a href="#pizza" class="cat-btn">🍕 بيتزا</a>
+    <a href="#burger" class="cat-btn">🍔 برجر</a>
+    <a href="#sides" class="cat-btn">🍟 سايدز</a>
+    <a href="#drinks" class="cat-btn">🥤 مشروبات</a>
+  </nav>
+
+  <main class="menu-section">
+
+    <!-- ===== قسم البيتزا ===== -->
+    <h2 class="section-title" id="pizza">🍕 بيتزا</h2>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <span class="menu-tag">الأكتر طلباً</span>
+        <h3 class="menu-card-name">بيتزا بيبروني</h3>
+        <p class="menu-card-desc">صوص طماطم مركز، جبنة موزاريلا، شرائح بيبروني حارة</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">220 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">بيتزا خضار</h3>
+        <p class="menu-card-desc">فلفل ألوان، فطر، زيتون، ذرة، جبنة موزاريلا</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">190 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">بيتزا فور تشيز</h3>
+        <p class="menu-card-desc">موزاريلا، شيدر، بارميزان، جبنة زرقاء</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">240 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-tag">جديد</span>
+        <h3 class="menu-card-name">بيتزا سوبر سوبريم</h3>
+        <p class="menu-card-desc">لحم مفروم، سجق، فلفل، بصل، زيتون، موزاريلا</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">260 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== قسم البرجر ===== -->
+    <h2 class="section-title" id="burger">🍔 برجر</h2>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">كلاسيك تشيز برجر</h3>
+        <p class="menu-card-desc">قرص لحم 150ج، جبنة شيدر، خس، طماطم، صوص خاص</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">145 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-tag">حار 🔥</span>
+        <h3 class="menu-card-name">سبايسي برجر</h3>
+        <p class="menu-card-desc">قرص لحم متبل، جبنة بيبر جاك، صوص هاريسا حار</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">160 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-tag">الأكتر طلباً</span>
+        <h3 class="menu-card-name">دبل ستاك برجر</h3>
+        <p class="menu-card-desc">قرصين لحم، دبل جبنة، بصل مكرمل، صوص باربيكيو</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">195 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">تشيكن كرسبي برجر</h3>
+        <p class="menu-card-desc">فراخ مقرمشة، كول سلو، مايونيز ثوم</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">150 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== قسم السايدز ===== -->
+    <h2 class="section-title" id="sides">🍟 سايدز</h2>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">بطاطس كلاسيك</h3>
+        <p class="menu-card-desc">بطاطس مقرمشة مع رشة ملح وبهارات خاصة</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">55 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">بطاطس بيري بيري</h3>
+        <p class="menu-card-desc">بطاطس متبلة بصوص بيري بيري الحار</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">65 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">أونيون رينجز</h3>
+        <p class="menu-card-desc">حلقات بصل مقرمشة مع صوص رانش</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">70 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">ناجتس فراخ (6 قطع)</h3>
+        <p class="menu-card-desc">ناجتس فراخ مقرمش مع صوص باربيكيو</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">85 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== قسم المشروبات ===== -->
+    <h2 class="section-title" id="drinks">🥤 مشروبات</h2>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">بيبسي / سبرايت / فانتا</h3>
+        <p class="menu-card-desc">مشروب غازي 330 مل</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">25 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">عصير فراولة طبيعي</h3>
+        <p class="menu-card-desc">فراولة طازة مع شوية نعناع</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">45 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <h3 class="menu-card-name">ميلك شيك شوكولاتة</h3>
+        <p class="menu-card-desc">ميلك شيك كريمي بالشوكولاتة مع كريمة</p>
+        <div class="menu-card-bottom">
+          <span class="menu-card-price">60 ج.م</span>
+          <button class="add-btn">إضافة</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Adam's Restaurant © 2026 — كل الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
